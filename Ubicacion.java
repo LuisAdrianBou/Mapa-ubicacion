@@ -1,19 +1,13 @@
 package Ubicacion;
 
 import processing.core.PApplet;
-
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.examples.marker.SimpleMarkerManagerApp;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 import de.fhpotsdam.unfolding.providers.Google;
-/**
- * Simple map app showing how to convert screen position to geo-location, and vice versa.
- * 
- * For automatic conversion from geo-location to screen, take a look at Unfolding's marker mechanism.
- * Start at {@link SimpleMarkeApp} and {@link SimpleMarkerManagerApp}.
- */
+
 public class Ubicacion extends PApplet {
 
 	UnfoldingMap map;
@@ -29,11 +23,9 @@ public class Ubicacion extends PApplet {
 		map.draw();
 
 		fill(215, 0, 0, 100);
-		// Shows latitude,longitude at mouse position
 		Location location = map.getLocation(mouseX, mouseY);
 		text("geo:" + location.toString(), mouseX, mouseY);
 
-		// Shows marker at Berlin location
 		Location loc = new Location(-16.42489402918141, -71.51242107152939);
 		ScreenPosition pos = map.getScreenPosition(loc);
 		ellipse(pos.x, pos.y, 20, 20);
