@@ -15,7 +15,7 @@ public class Ubicacion extends PApplet {
 	public void setup() {
 		size(1200, 900, OPENGL);
 
-		map = new UnfoldingMap(this, new Google.GoogleMapProvider());
+		map = new UnfoldingMap(this, new Microsoft.HybridProvider());
 		MapUtils.createDefaultEventDispatcher(this, map);
 	}
 
